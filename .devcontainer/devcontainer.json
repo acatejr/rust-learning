@@ -1,0 +1,30 @@
+{
+  "name": "Rust Learning",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "dev",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+
+  // Keep downloaded crates between container rebuilds
+  "mounts": [
+    "source=rust-cargo-registry,target=/usr/local/cargo/registry,type=volume"
+  ],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb",
+        "tamasfe.even-better-toml"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "rust-analyzer.check.command": "clippy"
+      }
+    }
+  },
+
+  "postCreateCommand": "rustc --version && cargo --version"
+}

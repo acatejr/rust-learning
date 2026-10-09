@@ -1,0 +1,30 @@
+# Rust build output (root and any nested crate built standalone)
+target/
+
+# rustfmt backup files
+**/*.rs.bk
+
+# MSVC debug info
+*.pdb
+
+# Code coverage artifacts
+*.profraw
+*.profdata
+lcov.info
+
+# Editor / IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
